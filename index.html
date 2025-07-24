@@ -1,451 +1,474 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Consul+On – AI 기반 상담 예약 도구</title>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <!-- 네비게이션 바 -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-            <div class="container">
-                <a class="navbar-brand fw-bold text-primary" href="#">Consul+On</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarContent"
-                    aria-controls="navbarContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Consul+On – AI 기반 상담 예약 도구</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 네비게이션 바 -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">Consul+On</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- me-auto → 제거, ms-auto로 우측으로 밀기, me-3으로 로그인 버튼과 간격 -->
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">서비스</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">가격</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <a href="#" class="btn btn-outline-primary me-2">로그인</a>
+            <a href="#" class="btn btn-primary">회원가입</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id="hero" class="pt-5 pb-5 text-center bg-light">
+      <div class="container">
+        <!-- 상단 배지 -->
+        <div class="mt-5 mb-3">
+          <!-- 변경 후: badge-gradient 클래스 추가 -->
+          <span class="badge rounded-pill badge-gradient px-4 py-2">
+            💎 AI기반 컨설팅 도구
+          </span>
+        </div>
+
+        <!-- 메인 헤딩 -->
+        <div class="mb-5">
+          <h1 class="display-4 fw-bold">
+            <span class="gradient-text">AI와 함께</span><br />
+            <span class="subtext">전문가와 상담하세요</span>
+          </h1>
+        </div>
+
+        <!-- 서브 헤딩 -->
+        <div class="mb-5">
+          <p class="lead text-muted">AI와 미리 상담 후 전문가와 만나보세요.</p>
+        </div>
+
+        <!-- 입력 그룹 (큰 사이즈) -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="input-group input-group-lg input-group-custom mb-4">
+              <input
+                type="text"
+                class="form-control custom-input"
+                placeholder="상담 주제를 간단히 입력하세요"
+              />
+              <button class="btn btn-custom" type="button">AI 사전응답</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4단계 설명 헤딩 -->
+        <div class="mb-4">
+          <p class="fs-5 text-secondary">4단계로 진행되는 컨설팅 서비스</p>
+        </div>
+
+        <!-- 4단계 카드 -->
+        <div class="row gx-4 gy-4 justify-content-center mb-5">
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>1. 질문 입력</strong><br />
+              <small class="text-muted">“예) 마케팅 전략 어떻게 짜죠?”</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>2. AI 사전응답</strong><br />
+              <small class="text-muted">“예) 타겟 분석 후 가이드 제공”</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>3. 전문가 매칭</strong><br />
+              <small class="text-muted">“AI 추천 기반 매칭 서비스”</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>4. 예약 &amp; 알림</strong><br />
+              <small class="text-muted">“예약 완료 후 푸시 알림”</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 통계 섹션 -->
+        <div class="row text-center mt-5 pt-4">
+          <div class="col-4 mb-3">
+            <h2 class="display-6 fw-bold">4300+</h2>
+            <p class="text-muted small">이용자 수</p>
+          </div>
+          <div class="col-4 mb-3">
+            <h2 class="display-6 fw-bold">15분</h2>
+            <p class="text-muted small">평균 매칭시간</p>
+          </div>
+          <div class="col-4 mb-3">
+            <h2 class="display-6 fw-bold">300+</h2>
+            <p class="text-muted small">등록된 전문가 수</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 사용법 영상 섹션 -->
+    <section id="howto" class="py-5 text-center">
+      <div class="container">
+        <!-- 타이틀 -->
+        <h2 class="howtouse fw-bold">컨설트온 사용법 영상</h2>
+        <p class="text-muted">3분만에 배우는 컨설트온 사용법을 배워보세요</p>
+
+        <!-- 영상 플레이어 더미 박스 -->
+        <div
+          class="ratio ratio-16x9 mx-auto mb-5"
+          style="
+            max-width: 800px;
+            background: #f8f9fa;
+            border-radius: 0.5rem;
+            overflow: hidden;
+          "
+        >
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <button
+              type="button"
+              class="btn btn-light btn-lg rounded-circle"
+              style="font-size: 3rem; width: 4rem; height: 4rem; line-height: 1"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 주요 기능 섹션 -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="main-title">강력한 AI기반 상담 도구</h2>
+        <p class="main-subtitle">
+          복잡한 과정없이 전문적인 상담을 받을 수 있습니다
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423L16.5 15.75l.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">AI Q&A</h3>
+            <p class="feature-description">
+              인공지능이 사용자의 질문에 즉시 답변하여 빠르고 정확한 정보를
+              제공합니다.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">전문가 검색</h3>
+            <p class="feature-description">
+              다양한 분야의 전문가를 쉽게 검색하고 원하는 조건에 맞는 상담자를
+              찾을 수 있습니다.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">화상 상담</h3>
+            <p class="feature-description">
+              고화질 화상 통화를 통해 실시간으로 전문가와 직접 상담할 수
+              있습니다.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">녹화+요약</h3>
+            <p class="feature-description">
+              상담 내용을 자동으로 녹화하고 핵심 내용을 요약하여 언제든지 확인할
+              수 있습니다.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">To-Do 알림</h3>
+            <p class="feature-description">
+              중요한 일정과 할 일을 자동으로 관리하고 알림을 통해 놓치지 않도록
+              도와줍니다.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">전문가 대시보드</h3>
+            <p class="feature-description">
+              전문가가 상담 현황과 고객 관리를 한눈에 파악할 수 있는 맞춤형
+              대시보드를 제공합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 가격 플랜 섹션 -->
+    <section class="pricing-section">
+      <h2 class="pricing-title">합리적인 가격으로 시작하세요</h2>
+      <p class="pricing-subtitle">
+        무료로 시작하고 필요에 따라 업그레이드하세요
+      </p>
+
+      <div class="plans">
+        <div class="plan">
+          <h3>무료 플랜</h3>
+          <p class="price">₩0 /월</p>
+          <ul>
+            <li class="enabled">고민 진단 설문 & AI 분석</li>
+            <li class="enabled">선배/실무자 연결 (월 1회)</li>
+            <li class="disabled">전문가 연결</li>
+            <li class="disabled">PDF 리포트 다운로드</li>
+            <li class="disabled">경험 콘텐츠 열람</li>
+          </ul>
+          <button class="default">무료로 시작</button>
+        </div>
+
+        <div class="plan">
+          <h3>Starter 플랜</h3>
+          <p class="price">₩9,900 /월</p>
+          <ul>
+            <li class="enabled">고민 진단 설문 & AI 분석</li>
+            <li class="enabled">선배/실무자 연결 (무제한)</li>
+            <li class="enabled">PDF 리포트 다운로드</li>
+            <li class="enabled">경험 콘텐츠 열람</li>
+            <li class="disabled">전문가 연결</li>
+          </ul>
+          <button class="default">시작하기</button>
+        </div>
+
+        <div class="plan recommend">
+          <div class="badge">추천</div>
+          <h3>Pro 플랜</h3>
+          <p class="price">₩49,900 /월</p>
+          <ul>
+            <li class="enabled">고민 진단 설문 & AI 분석</li>
+            <li class="enabled">선배/실무자 연결 (무제한)</li>
+            <li class="enabled">전문가 연결</li>
+            <li class="enabled">PDF 리포트 다운로드</li>
+            <li class="enabled">경험 콘텐츠 열람</li>
+            <li class="enabled">우선 상담 예약 기능</li>
+          </ul>
+          <button class="recommend">업그레이드</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section">
+      <h2>지금 시작하고 15분만에 상담을 시작해보세요</h2>
+      <p><!-- 수정 가능 -->간단히 AI와 대화나누고 고민을 해결해보세요</p>
+      <button><!-- 수정 가능 -->무료로 시작하기</button>
+    </section>
+
+    <!-- 푸터 -->
+    <footer id="about" class="bg-dark text-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5 class="fw-bold pt-3">Consul+On</h5>
+            <p class="small">
+              (주)컨설트온<br />
+              사업자등록 123-45-67890<br />
+              대표이사 홍길동<br />
+              서울시 강남구 테헤란로에 회사가 있으면 어떤기분, 10층
+            </p>
+          </div>
+          <div class="col-6 col-md-2 mb-4 mb-md-0">
+            <h6 class="fw-bold pt-3">서비스</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#features" class="text-light text-decoration-none"
+                  >주요 기능</a
                 >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+              </li>
+              <li>
+                <a href="#pricing" class="text-light text-decoration-none"
+                  >가격</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-4 mb-md-0">
+            <h6 class="fw-bold pt-3">회사소개</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#" class="text-light text-decoration-none">블로그</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">채용</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-4 mb-md-0">
+            <h6 class="fw-bold pt-3">정보</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#" class="text-light text-decoration-none">이용약관</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >개인정보처리방침</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2">
+            <h6 class="fw-bold pt-3">연락처</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a
+                  href="mailto:support@consulon.com"
+                  class="text-light text-decoration-none"
+                  >support@consulon.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center mt-3 small">
+          © 2025 ConsultOn. All rights reserved.
+        </div>
+      </div>
+    </footer>
 
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <!-- me-auto → 제거, ms-auto로 우측으로 밀기, me-3으로 로그인 버튼과 간격 -->
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#features">서비스</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pricing">가격</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                    </ul>
-
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-outline-primary me-2">로그인</a>
-                        <a href="#" class="btn btn-primary">회원가입</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <section id="hero" class="pt-5 pb-5 text-center bg-light">
-            <div class="container">
-                <!-- 상단 배지 -->
-                <div class="mt-5 mb-3">
-                    <span class="badge rounded-pill bg-primary px-4 py-2"> 💎 AI기반 컨설팅 도구 </span>
-                </div>
-
-                <!-- 메인 헤딩 -->
-                <div class="mb-5">
-                    <h1 class="display-4 fw-bold">
-                        <span class="text-primary">AI와 함께</span><br />
-                        <span>전문가와 상담하세요</span>
-                    </h1>
-                </div>
-
-                <!-- 서브 헤딩 -->
-                <div class="mb-5">
-                    <p class="lead text-muted">AI와 미리 상담 후 전문가와 만나보세요.</p>
-                </div>
-
-                <!-- 입력 그룹 (큰 사이즈) -->
-                <div class="row justify-content-center mb-5">
-                    <div class="col-md-8 col-lg-6">
-                        <div class="input-group input-group-lg shadow-sm mb-4">
-                            <input type="text" class="form-control" placeholder="상담 주제를 간단히 입력하세요" />
-                            <button class="btn btn-primary" type="button">AI 사전응답</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4단계 설명 헤딩 -->
-                <div class="mb-4">
-                    <p class="fs-5 text-secondary">4단계로 진행되는 컨설팅 서비스</p>
-                </div>
-
-                <!-- 4단계 카드 -->
-                <div class="row gx-4 gy-4 justify-content-center mb-5">
-                    <div class="col-6 col-md-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100">
-                            <strong>1. 질문 입력</strong><br />
-                            <small class="text-muted">“예) 마케팅 전략 어떻게 짜죠?”</small>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100">
-                            <strong>2. AI 사전응답</strong><br />
-                            <small class="text-muted">“예) 타겟 분석 후 가이드 제공”</small>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100">
-                            <strong>3. 전문가 매칭</strong><br />
-                            <small class="text-muted">“AI 추천 기반 매칭 서비스”</small>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="p-4 bg-white rounded shadow-sm h-100">
-                            <strong>4. 예약 &amp; 알림</strong><br />
-                            <small class="text-muted">“예약 완료 후 푸시 알림”</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 통계 섹션 -->
-                <div class="row text-center mt-5 pt-4">
-                    <div class="col-4 mb-3">
-                        <h2 class="display-6 fw-bold">4300+</h2>
-                        <p class="text-muted small">이용자 수</p>
-                    </div>
-                    <div class="col-4 mb-3">
-                        <h2 class="display-6 fw-bold">15분</h2>
-                        <p class="text-muted small">평균 매칭시간</p>
-                    </div>
-                    <div class="col-4 mb-3">
-                        <h2 class="display-6 fw-bold">300+</h2>
-                        <p class="text-muted small">등록된 전문가 수</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 주요 기능 섹션 -->
-        <section class="features-section">
-            <div class="container">
-                <h2 class="main-title">강력한 AI기반 상담 도구</h2>
-                <p class="main-subtitle">복잡한 과정없이 전문적인 상담을 받을 수 있습니다</p>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423L16.5 15.75l.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">AI Q&A</h3>
-                        <p class="feature-description">
-                            인공지능이 사용자의 질문에 즉시 답변하여 빠르고 정확한 정보를 제공합니다.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">전문가 검색</h3>
-                        <p class="feature-description">
-                            다양한 분야의 전문가를 쉽게 검색하고 원하는 조건에 맞는 상담자를 찾을 수 있습니다.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">화상 상담</h3>
-                        <p class="feature-description">
-                            고화질 화상 통화를 통해 실시간으로 전문가와 직접 상담할 수 있습니다.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">녹화+요약</h3>
-                        <p class="feature-description">
-                            상담 내용을 자동으로 녹화하고 핵심 내용을 요약하여 언제든지 확인할 수 있습니다.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">To-Do 알림</h3>
-                        <p class="feature-description">
-                            중요한 일정과 할 일을 자동으로 관리하고 알림을 통해 놓치지 않도록 도와줍니다.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">전문가 대시보드</h3>
-                        <p class="feature-description">
-                            전문가가 상담 현황과 고객 관리를 한눈에 파악할 수 있는 맞춤형 대시보드를 제공합니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 가격 플랜 섹션 -->
-        <section class="pricing-section">
-            <h2>합리적인 가격으로 시작하세요</h2>
-            <p>무료로 시작하고 필요에 따라 업그레이드하세요</p>
-
-            <div class="plans">
-                <div class="plan">
-                    <h3>무료 플랜</h3>
-                    <p class="price">₩0 /월</p>
-                    <ul>
-                        <li class="enabled">고민 진단 설문 & AI 분석</li>
-                        <li class="enabled">선배/실무자 연결 (월 1회)</li>
-                        <li class="disabled">전문가 연결</li>
-                        <li class="disabled">PDF 리포트 다운로드</li>
-                        <li class="disabled">경험 콘텐츠 열람</li>
-                    </ul>
-                    <button class="default">무료로 시작</button>
-                </div>
-
-                <div class="plan">
-                    <h3>Starter 플랜</h3>
-                    <p class="price">₩9,900 /월</p>
-                    <ul>
-                        <li class="enabled">고민 진단 설문 & AI 분석</li>
-                        <li class="enabled">선배/실무자 연결 (무제한)</li>
-                        <li class="enabled">PDF 리포트 다운로드</li>
-                        <li class="enabled">경험 콘텐츠 열람</li>
-                        <li class="disabled">전문가 연결</li>
-                    </ul>
-                    <button class="default">시작하기</button>
-                </div>
-
-                <div class="plan recommend">
-                    <div class="badge">추천</div>
-                    <h3>Pro 플랜</h3>
-                    <p class="price">₩49,900 /월</p>
-                    <ul>
-                        <li class="enabled">고민 진단 설문 & AI 분석</li>
-                        <li class="enabled">선배/실무자 연결 (무제한)</li>
-                        <li class="enabled">전문가 연결</li>
-                        <li class="enabled">PDF 리포트 다운로드</li>
-                        <li class="enabled">경험 콘텐츠 열람</li>
-                        <li class="enabled">우선 상담 예약 기능</li>
-                    </ul>
-                    <button class="recommend">업그레이드</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA 섹션 -->
-        <section class="cta-section">
-            <h2>지금 시작하고 15분만에 상담을 시작해보세요</h2>
-            <p><!-- 수정 가능 -->간단히 AI와 대화나누고 고민을 해결해보세요</p>
-            <button><!-- 수정 가능 -->무료로 시작하기</button>
-        </section>
-
-        <!-- 푸터 -->
-        <footer>
-            <div class="footer-container">
-                <div class="footer-section">
-                    <h4>Oz</h4>
-                    <p><!-- 수정 가능 -->㈜OZ스쿨</p>
-                    <p><!-- 수정 가능 -->사업자등록번호 777-77-77777</p>
-                    <p><!-- 수정 가능 -->서울시 강동구</p>
-                    <p><!-- 수정 가능 -->대표</p>
-                </div>
-                <div class="footer-section">
-                    <h4>서비스</h4>
-                    <p><!-- 수정 가능 -->나의 프로젝트</p>
-                </div>
-                <div class="footer-section">
-                    <h4>회사소개</h4>
-                    <p><!-- 수정 가능 -->유튜브</p>
-                </div>
-                <div class="footer-section">
-                    <h4>정보</h4>
-                    <p><!-- 수정 가능 -->이용약관</p>
-                    <p><!-- 수정 가능 -->개인정보처리방침</p>
-                </div>
-                <div class="footer-section">
-                    <h4>연락처</h4>
-                    <p><!-- 수정 가능 -->hsanghoon133334@gmail.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom"><!-- 수정 가능 -->Developed by Oz · © 2025 OZ</div>
-        </footer>
-
-        <!-- CTA 섹션 -->
-        <section id="cta" class="py-5 text-white" style="background: linear-gradient(90deg, #4a6cf7, #6f5af7)">
-            <div class="container text-center">
-                <h2 class="fw-bold mb-3">지금 시작하고 15분 만에 상담을 시작해 보세요</h2>
-                <a href="#" class="btn btn-light btn-lg">무료로 시작하기</a>
-            </div>
-        </section>
-
-        <!-- 푸터 -->
-        <footer id="about" class="bg-dark text-light py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <h5 class="fw-bold">Consul+On</h5>
-                        <p class="small">
-                            (주)컨설트온<br />
-                            사업자등록 123-45-67890<br />
-                            대표이사 홍길동<br />
-                            서울시 강남구 테헤란로에 회사가 있으면 어떤기분, 10층
-                        </p>
-                    </div>
-                    <div class="col-6 col-md-2 mb-4 mb-md-0">
-                        <h6 class="fw-bold">서비스</h6>
-                        <ul class="list-unstyled small">
-                            <li>
-                                <a href="#features" class="text-light text-decoration-none">주요 기능</a>
-                            </li>
-                            <li>
-                                <a href="#pricing" class="text-light text-decoration-none">가격</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-2 mb-4 mb-md-0">
-                        <h6 class="fw-bold">회사소개</h6>
-                        <ul class="list-unstyled small">
-                            <li>
-                                <a href="#" class="text-light text-decoration-none">블로그</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-light text-decoration-none">채용</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-2 mb-4 mb-md-0">
-                        <h6 class="fw-bold">정보</h6>
-                        <ul class="list-unstyled small">
-                            <li>
-                                <a href="#" class="text-light text-decoration-none">이용약관</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-light text-decoration-none">개인정보처리방침</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <h6 class="fw-bold">연락처</h6>
-                        <ul class="list-unstyled small">
-                            <li>
-                                <a href="mailto:support@consulon.com" class="text-light text-decoration-none"
-                                    >support@consulon.com</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="text-center mt-4 small">© 2025 ConsultOn. All rights reserved.</div>
-            </div>
-        </footer>
-
-        <!-- Bootstrap JS Bundle (Popper 포함) -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+    <!-- Bootstrap JS Bundle (Popper 포함) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

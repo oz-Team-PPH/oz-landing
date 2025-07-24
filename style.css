@@ -5,9 +5,92 @@
   padding: 0;
 }
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   background-color: #ffffff;
   color: #1f2937;
+  line-height: 1.6;
+}
+
+/* badge-gradient 클래스에 CTA 그라데이션 매치 */
+.badge-gradient {
+  background: linear-gradient(135deg, #7c3aed, #5d5fff) !important;
+  color: #fff; /* 텍스트는 흰색 유지 */
+}
+/* 그라데이션 텍스트 클래스 */
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed, #5d5fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+}
+.subtext {
+  font-size: 4rem;
+}
+
+/* 1) 전체 박스 그림자 & 둥근 모서리 */
+.input-group-custom {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  overflow: hidden; /* 모서리 안쪽에 컨텐츠가 넘치지 않도록 */
+}
+
+/* 2) 입력창 스타일 */
+.custom-input {
+  padding: 1rem; /* 높이를 더 키워줍니다 */
+  font-size: 1rem; /* 텍스트도 살짝 키움 */
+}
+.custom-input::placeholder {
+  color: #b0b0b0; /* 더 옅은 그레이 */
+  font-size: 1rem; /* placeholder만 작게 */
+}
+
+/* 3) 버튼 스타일 */
+.btn-custom {
+  background: linear-gradient(135deg, #7c3aed, #5d5fff);
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem; /* 버튼도 입력창 높이에 맞춰 키움 */
+  font-size: 1rem;
+}
+
+/* 4) inline-block 강제 (부모 그리드에 걸릴 경우 대비) */
+.input-group-custom .btn-custom {
+  width: auto !important;
+  display: inline-block;
+}
+.input-group-custom .custom-input {
+  /* 예시: 패딩을 더 늘려서 높이를 키움 */
+  padding: 1.5rem 1rem; /* 상하 1.5rem, 좌우 1rem */
+  /* 예시: 글자도 살짝 키워줌 */
+  font-size: 1.125rem; /* 18px 정도 */
+  /* 1) 기존 모든 반경 초기화 */
+  border-radius: 0 !important;
+  /* 2) 왼쪽 모서리만 다시 0.75rem */
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+}
+
+/* 사용법 영상 섹션 */
+.howtouse {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  margin-top: 3rem;
+  margin-bottom: 24px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.howtouseSub {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 80px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -17,10 +100,27 @@ body {
   text-align: center;
 }
 
-.pricing-section h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.pricing-section .pricing-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  margin-top: 3rem;
+  margin-bottom: 24px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.pricing-section .pricing-subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 80px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .pricing-section p {
@@ -114,6 +214,7 @@ body {
   color: white;
   text-align: center;
   padding: 60px 20px;
+  margin-top: 3rem;
 }
 
 .cta-section h2 {
@@ -127,14 +228,25 @@ body {
 }
 
 .cta-section button {
-  margin-top: 30px;
-  padding: 12px 24px;
+  /* 1) 부모에서 물려온 100% 폭을 해제 */
+  width: auto !important;
+
+  /* 2) inline-block 으로 설정해야 content 너비만큼만 차지합니다 */
+  display: inline-block;
+
+  /* 3) 기존 margin-top 유지하면서 좌/우는 auto로 중앙 정렬 */
+  margin: 30px auto 0;
+
+  /* 4) 원하시는 만큼 패딩과 폰트 크기를 조절 */
+  padding: 8px 16px;
+  font-size: 12px;
+
+  /* 나머지 스타일은 그대로 */
   background: white;
   color: #5d5fff;
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
   cursor: pointer;
 }
 
@@ -185,7 +297,7 @@ footer {
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   margin: 0;
   padding: 0;
 }

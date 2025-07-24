@@ -10,6 +10,11 @@ body {
   color: #1f2937;
   line-height: 1.6;
 }
+/* 상단 배지 */
+.badge-icon {
+  margin-right: 0.75rem; /* 기존 0.5em → 0.75rem 으로 확대 */
+  margin-left: -0.5rem;
+}
 
 /* badge-gradient 클래스에 CTA 그라데이션 매치 */
 .badge-gradient {
@@ -25,6 +30,9 @@ body {
 }
 .subtext {
   font-size: 4rem;
+}
+.badge {
+  margin-top: 4rem;
 }
 
 /* 1) 전체 박스 그림자 & 둥근 모서리 */
@@ -259,7 +267,7 @@ footer {
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;

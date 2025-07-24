@@ -1,13 +1,211 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>Consult On 요금제</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Consul+On – AI 기반 상담 예약 도구</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 네비게이션 바 -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">Consul+On</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <section class="pricing-section">
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- me-auto → 제거, ms-auto로 우측으로 밀기, me-3으로 로그인 버튼과 간격 -->
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">서비스</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">가격</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <a href="#" class="btn btn-outline-primary me-2">로그인</a>
+            <a href="#" class="btn btn-primary">회원가입</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id="hero" class="pt-5 pb-5 text-center bg-light">
+      <div class="container">
+        <!-- 상단 배지 -->
+        <div class="mt-5 mb-3">
+          <span class="badge rounded-pill bg-primary px-4 py-2">
+            💎 AI기반 컨설팅 도구
+          </span>
+        </div>
+
+        <!-- 메인 헤딩 -->
+        <div class="mb-5">
+          <h1 class="display-4 fw-bold">
+            <span class="text-primary">AI와 함께</span><br />
+            <span>전문가와 상담하세요</span>
+          </h1>
+        </div>
+
+        <!-- 서브 헤딩 -->
+        <div class="mb-5">
+          <p class="lead text-muted">AI와 미리 상담 후 전문가와 만나보세요.</p>
+        </div>
+
+        <!-- 입력 그룹 (큰 사이즈) -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 col-lg-6">
+            <div class="input-group input-group-lg shadow-sm mb-4">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="상담 주제를 간단히 입력하세요"
+              />
+              <button class="btn btn-primary" type="button">AI 사전응답</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4단계 설명 헤딩 -->
+        <div class="mb-4">
+          <p class="fs-5 text-secondary">4단계로 진행되는 컨설팅 서비스</p>
+        </div>
+
+        <!-- 4단계 카드 -->
+        <div class="row gx-4 gy-4 justify-content-center mb-5">
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>1. 질문 입력</strong><br />
+              <small class="text-muted">“예) 마케팅 전략 어떻게 짜죠?”</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>2. AI 사전응답</strong><br />
+              <small class="text-muted">“예) 타겟 분석 후 가이드 제공”</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>3. 전문가 매칭</strong><br />
+              <small class="text-muted">“AI 추천 기반 매칭 서비스”</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <strong>4. 예약 &amp; 알림</strong><br />
+              <small class="text-muted">“예약 완료 후 푸시 알림”</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 통계 섹션 -->
+        <div class="row text-center mt-5 pt-4">
+          <div class="col-4 mb-3">
+            <h2 class="display-6 fw-bold">4300+</h2>
+            <p class="text-muted small">이용자 수</p>
+          </div>
+          <div class="col-4 mb-3">
+            <h2 class="display-6 fw-bold">15분</h2>
+            <p class="text-muted small">평균 매칭시간</p>
+          </div>
+          <div class="col-4 mb-3">
+            <h2 class="display-6 fw-bold">300+</h2>
+            <p class="text-muted small">등록된 전문가 수</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 주요 기능 섹션 -->
+    <section id="features" class="py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-3">강력한 AI 기반 상담 도구</h2>
+        <p class="text-muted mb-4">
+          복잡한 과정 없이 전문적인 상담을 받을 수 있습니다
+        </p>
+        <div class="row g-4">
+          <div class="col-sm-6 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">1. AI Q&amp;A</h5>
+                <p class="card-text">AI가 기본 질문을 즉시 처리합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">2. 전문가 검색</h5>
+                <p class="card-text">
+                  AI 추천을 기반으로 최적의 전문가를 매칭합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">3. 화상 상담</h5>
+                <p class="card-text">Zoom/Agora 연동으로 15분간 집중 상담.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">4. 녹화 + 요약</h5>
+                <p class="card-text">
+                  상담 영상 녹화 후 AI가 핵심만 요약합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">5. To-Do 알림</h5>
+                <p class="card-text">
+                  추출된 To-Do를 캘린더/푸시로 알려드립니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">6. 전문가 대시보드</h5>
+                <p class="card-text">
+                  예약·수익·요약 검수를 한눈에 관리합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 가격 플랜 섹션 --> 
+     <section class="pricing-section">
   <h2>합리적인 가격으로 시작하세요</h2>
   <p>무료로 시작하고 필요에 따라 업그레이드하세요</p>
 
@@ -95,5 +293,92 @@
     </div>
   </footer>
 
-</body>
+    <!-- CTA 섹션 -->
+    <section
+      id="cta"
+      class="py-5 text-white"
+      style="background: linear-gradient(90deg, #4a6cf7, #6f5af7)"
+    >
+      <div class="container text-center">
+        <h2 class="fw-bold mb-3">
+          지금 시작하고 15분 만에 상담을 시작해 보세요
+        </h2>
+        <a href="#" class="btn btn-light btn-lg">무료로 시작하기</a>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer id="about" class="bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5 class="fw-bold">Consul+On</h5>
+            <p class="small">
+              (주)컨설트온<br />
+              사업자등록 123-45-67890<br />
+              대표이사 홍길동<br />
+              서울시 강남구 테헤란로에 회사가 있으면 어떤기분, 10층
+            </p>
+          </div>
+          <div class="col-6 col-md-2 mb-4 mb-md-0">
+            <h6 class="fw-bold">서비스</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#features" class="text-light text-decoration-none"
+                  >주요 기능</a
+                >
+              </li>
+              <li>
+                <a href="#pricing" class="text-light text-decoration-none"
+                  >가격</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-4 mb-md-0">
+            <h6 class="fw-bold">회사소개</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#" class="text-light text-decoration-none">블로그</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">채용</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-4 mb-md-0">
+            <h6 class="fw-bold">정보</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#" class="text-light text-decoration-none">이용약관</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >개인정보처리방침</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2">
+            <h6 class="fw-bold">연락처</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a
+                  href="mailto:support@consulon.com"
+                  class="text-light text-decoration-none"
+                  >support@consulon.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center mt-4 small">
+          © 2025 ConsultOn. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (Popper 포함) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
